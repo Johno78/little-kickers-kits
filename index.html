@@ -148,6 +148,54 @@
     color:#6B786F;font-size:.9rem;
   }
 
+  /* league nav + sections */
+  .league-nav{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 44px;}
+  .league-nav a{
+    display:inline-block;padding:8px 14px;border-radius:999px;
+    background:var(--card);border:1px solid var(--line);
+    font-size:.85rem;font-weight:600;text-decoration:none;color:var(--ink);
+  }
+  .league-nav a:hover{border-color:var(--amber-dark);color:var(--amber-dark);}
+  .league-block{margin-bottom:52px;}
+  .league-block:last-child{margin-bottom:0;}
+  .league-heading{
+    font-family:'Inter';font-weight:800;font-size:1.1rem;
+    margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--line);
+  }
+  .kit-card.placeholder{
+    display:flex;align-items:center;justify-content:center;
+    border-style:dashed;min-height:220px;
+  }
+  .kit-card.placeholder .placeholder-inner{
+    text-align:center;color:#8A9A90;font-size:.9rem;padding:20px;
+  }
+
+  /* order form */
+  .order-section{background:#EFEBDD;}
+  .order-form{
+    display:grid;gap:16px;grid-template-columns:1fr 1fr;
+    max-width:640px;
+  }
+  .order-form .full{grid-column:1/-1;}
+  .order-form label{
+    display:block;font-size:.85rem;font-weight:700;margin-bottom:6px;
+  }
+  .order-form input,
+  .order-form select,
+  .order-form textarea{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;
+    font-family:'Inter';font-size:.95rem;background:#fff;color:var(--ink);
+  }
+  .order-form textarea{resize:vertical;min-height:90px;}
+  .order-form .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .order-form button{
+    background:var(--pitch-dark);color:var(--chalk);border:none;
+    padding:13px 24px;border-radius:999px;font-weight:700;font-size:.95rem;cursor:pointer;
+  }
+  .order-form button:hover{background:var(--pitch-mid);}
+  .order-note{font-size:.85rem;color:#6B786F;}
+  @media(max-width:640px){.order-form{grid-template-columns:1fr;}}
+
   /* how it works */
   .steps{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
   .step .num{color:var(--amber-dark);font-size:1.6rem;display:block;margin-bottom:10px;}
@@ -196,6 +244,7 @@
     <nav class="nav-links">
       <a href="#kits">Kits</a>
       <a href="#how">How to order</a>
+      <a href="#order-form">Order form</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="cta" href="#contact">Order now</a>
@@ -225,7 +274,18 @@
       <p>Swap these placeholder cards for your real kits, photos and prices — each one's set up the same way so it's quick to edit.</p>
     </div>
 
-    <div class="grid" id="kit-grid">
+    <div class="league-nav">
+      <a href="#pl">Premier League</a>
+      <a href="#champ">Championship</a>
+      <a href="#ligue1">French League</a>
+      <a href="#laliga">Spanish League</a>
+      <a href="#seriea">Italian League</a>
+      <a href="#intl">International</a>
+    </div>
+
+    <div class="league-block" id="pl">
+      <h3 class="league-heading">Premier League</h3>
+      <div class="grid" id="kit-grid">
       <!-- Repeatable kit card. Duplicate this block for each kit you sell. -->
       <div class="kit-card">
         <div class="kit-shirt" style="background:none;">
@@ -352,9 +412,55 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
 
-    <p class="placeholder-note"></p>
+    <div class="league-block" id="champ">
+      <h3 class="league-heading">Championship</h3>
+      <div class="grid">
+        <div class="kit-card placeholder">
+          <div class="placeholder-inner">Championship kits coming soon<br>— message us to check availability</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="league-block" id="ligue1">
+      <h3 class="league-heading">French League</h3>
+      <div class="grid">
+        <div class="kit-card placeholder">
+          <div class="placeholder-inner">French League kits coming soon<br>— message us to check availability</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="league-block" id="laliga">
+      <h3 class="league-heading">Spanish League</h3>
+      <div class="grid">
+        <div class="kit-card placeholder">
+          <div class="placeholder-inner">Spanish League kits coming soon<br>— message us to check availability</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="league-block" id="seriea">
+      <h3 class="league-heading">Italian League</h3>
+      <div class="grid">
+        <div class="kit-card placeholder">
+          <div class="placeholder-inner">Italian League kits coming soon<br>— message us to check availability</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="league-block" id="intl">
+      <h3 class="league-heading">International</h3>
+      <div class="grid">
+        <div class="kit-card placeholder">
+          <div class="placeholder-inner">International kits coming soon<br>— message us to check availability</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="placeholder-note">Each league box above works the same way as the Premier League cards — copy a real kit-card block into it once you've got stock for that league (see the README for how).</p>
   </div>
 </section>
 
@@ -382,6 +488,51 @@
         <p>Pay by bank transfer, then collect locally or we'll get it posted out to you.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="order-form" class="order-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ORDER BY EMAIL</span>
+      <h2>Prefer to fill in a form?</h2>
+      <p>Fill this in and it'll open your email app with everything filled out ready to send to us — no account or sign-up needed.</p>
+    </div>
+
+    <form class="order-form" id="orderForm">
+      <div>
+        <label for="of-name">Your name</label>
+        <input type="text" id="of-name" name="name" required>
+      </div>
+      <div>
+        <label for="of-email">Your email</label>
+        <input type="email" id="of-email" name="email" required>
+      </div>
+      <div class="full">
+        <label for="of-kit">Kit / team wanted</label>
+        <input type="text" id="of-kit" name="kit" placeholder="e.g. Manchester United Away 26/27" required>
+      </div>
+      <div>
+        <label for="of-size">Size</label>
+        <input type="text" id="of-size" name="size" placeholder="e.g. Kids 9-10, Adult M" required>
+      </div>
+      <div>
+        <label for="of-qty">Quantity</label>
+        <input type="number" id="of-qty" name="qty" min="1" value="1" required>
+      </div>
+      <div class="full">
+        <label for="of-personalisation">Name &amp; number (optional)</label>
+        <input type="text" id="of-personalisation" name="personalisation" placeholder="e.g. RASHFORD 10">
+      </div>
+      <div class="full">
+        <label for="of-notes">Anything else?</label>
+        <textarea id="of-notes" name="notes" placeholder="Delivery vs collection, extra questions, etc."></textarea>
+      </div>
+      <div class="submit-row">
+        <button type="submit">Send order</button>
+        <span class="order-note">Opens your email app with the order pre-filled — just hit send.</span>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -416,6 +567,27 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Order form -> pre-filled email
+  // TODO: replace with your real order email address
+  const ORDER_EMAIL = 'add-your-email-here@example.com';
+
+  document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const subject = `Kit order — ${f.kit.value}`;
+    const body =
+`Name: ${f.name.value}
+Email: ${f.email.value}
+Kit/team: ${f.kit.value}
+Size: ${f.size.value}
+Quantity: ${f.qty.value}
+Name & number: ${f.personalisation.value || '—'}
+Notes: ${f.notes.value || '—'}`;
+
+    window.location.href =
+      `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
 
   // PWA install prompt handling
   let deferredPrompt;
