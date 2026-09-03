@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Kickers Football Kits</title>
+<meta name="description" content="Replica football kits — order through Little Kickers Football Kits.">
+<meta name="theme-color" content="#163B2D">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch-dark:#163B2D;
+    --pitch-mid:#1F5B42;
+    --chalk:#F5F1E6;
+    --ink:#0E2019;
+    --amber:#E8871E;
+    --amber-dark:#C86C0E;
+    --card:#FFFFFF;
+    --line:#D8D2C2;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--chalk);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,h3,.num{
+    font-family:'Archivo Black','Inter',sans-serif;
+    line-height:1.02;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:40;
+    background:var(--pitch-dark);
+    color:var(--chalk);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1120px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px;font-size:1.05rem;}
+  .brand .dot{width:10px;height:10px;background:var(--amber);border-radius:50%;flex:none;}
+  .nav a.cta{
+    background:var(--amber);color:var(--pitch-dark);
+    padding:9px 16px;border-radius:999px;font-weight:700;font-size:.9rem;
+    text-decoration:none;
+  }
+  .nav-links{display:none;gap:22px;font-size:.92rem;font-weight:500;}
+  @media(min-width:720px){.nav-links{display:flex;}}
+
+  /* hero */
+  .hero{
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 74px),
+      linear-gradient(180deg, var(--pitch-dark), var(--pitch-mid));
+    color:var(--chalk);
+    padding:64px 0 88px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero .kicker{
+    display:inline-block;font-size:.85rem;font-weight:600;
+    color:var(--amber);margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    max-width:11ch;
+  }
+  .hero p.lede{
+    max-width:46ch;margin-top:18px;font-size:1.08rem;color:#D7E4DB;
+  }
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:999px;font-weight:700;font-size:.95rem;
+    text-decoration:none;border:2px solid transparent;
+  }
+  .btn-primary{background:var(--amber);color:var(--pitch-dark);}
+  .btn-primary:hover{background:var(--amber-dark);}
+  .btn-ghost{border-color:rgba(245,241,230,.4);color:var(--chalk);}
+  .btn-ghost:hover{border-color:var(--chalk);}
+  .hero-badge{
+    position:absolute;right:-40px;top:20px;width:340px;height:340px;
+    border-radius:50%;border:2px solid rgba(245,241,230,.14);
+  }
+  .hero-badge::after{
+    content:"";position:absolute;inset:34px;border-radius:50%;
+    border:2px solid rgba(245,241,230,.1);
+  }
+
+  /* marquee */
+  .marquee{
+    background:var(--amber);color:var(--pitch-dark);
+    overflow:hidden;white-space:nowrap;font-weight:700;font-size:.85rem;
+    padding:10px 0;
+  }
+  .marquee div{display:inline-block;padding-left:100%;animation:scroll 22s linear infinite;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+
+  /* section shell */
+  section{padding:72px 0;}
+  .section-head{max-width:52ch;margin-bottom:40px;}
+  .section-head .eyebrow{color:var(--amber-dark);font-weight:700;font-size:.85rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-top:8px;}
+  .section-head p{margin-top:12px;color:#4B5A52;font-size:1.02rem;}
+
+  /* products */
+  .grid{
+    display:grid;gap:20px;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  }
+  .kit-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .kit-shirt{
+    aspect-ratio:1/1;
+    background:linear-gradient(160deg,var(--pitch-mid),var(--pitch-dark));
+    position:relative;display:flex;align-items:center;justify-content:center;
+  }
+  .kit-shirt .num{color:rgba(245,241,230,.9);font-size:3.4rem;}
+  .kit-body{padding:16px 18px 20px;}
+  .kit-body .name{font-weight:700;font-size:1rem;}
+  .kit-body .meta{color:#6B786F;font-size:.85rem;margin-top:3px;}
+  .kit-body .row{display:flex;align-items:center;justify-content:space-between;margin-top:14px;}
+  .kit-body .price{font-weight:800;font-size:1.05rem;}
+  .kit-body .order-link{
+    font-size:.85rem;font-weight:700;color:var(--pitch-dark);
+    text-decoration:none;border-bottom:2px solid var(--amber);padding-bottom:1px;
+  }
+  .placeholder-note{
+    margin-top:28px;padding:16px 18px;border:1px dashed var(--line);border-radius:var(--radius);
+    color:#6B786F;font-size:.9rem;
+  }
+
+  /* how it works */
+  .steps{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+  .step .num{color:var(--amber-dark);font-size:1.6rem;display:block;margin-bottom:10px;}
+  .step h3{font-size:1.05rem;font-weight:800;font-family:'Inter';}
+  .step p{color:#4B5A52;font-size:.95rem;margin-top:6px;}
+
+  /* contact */
+  .contact{background:var(--pitch-dark);color:var(--chalk);}
+  .contact .wrap{
+    display:flex;flex-direction:column;gap:26px;
+  }
+  @media(min-width:760px){.contact .wrap{flex-direction:row;align-items:flex-end;justify-content:space-between;}}
+  .contact h2{font-size:clamp(1.7rem,3.6vw,2.4rem);max-width:14ch;}
+  .contact p{color:#C9D6CD;margin-top:12px;max-width:38ch;}
+  .contact-links{display:flex;flex-direction:column;gap:12px;}
+  .contact-links a{
+    display:flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;
+    color:var(--chalk);
+  }
+  .contact-links a span.tag{
+    background:rgba(245,241,230,.12);border-radius:999px;padding:8px 10px;font-size:.8rem;
+  }
+
+  footer{padding:26px 0;text-align:center;color:#8A9A90;font-size:.85rem;background:var(--pitch-dark);}
+  footer .wrap{border-top:1px solid rgba(245,241,230,.12);padding-top:20px;}
+
+  .install-banner{
+    display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:50;
+    background:var(--ink);color:var(--chalk);border-radius:12px;
+    padding:14px 16px;align-items:center;justify-content:space-between;gap:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  .install-banner.show{display:flex;}
+  .install-banner button{
+    background:var(--amber);color:var(--pitch-dark);border:none;border-radius:8px;
+    padding:9px 14px;font-weight:700;font-size:.85rem;
+  }
+  .install-banner .dismiss{background:transparent;color:#B9C4BD;border:none;font-size:1.1rem;padding:0 6px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand"><span class="dot"></span>Little Kickers Football Kits</div>
+    <nav class="nav-links">
+      <a href="#kits">Kits</a>
+      <a href="#how">How to order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="cta" href="#contact">Order now</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge"></div>
+  <div class="wrap">
+    <span class="kicker">NEW STOCK DROPPING WEEKLY</span>
+    <h1>Kits for the terraces, not the trophy cabinet.</h1>
+    <p class="lede">Replica football kits at prices that make sense. Order through the page, pay easy, collect or delivered — same friendly service you already know from Facebook.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#kits">See what's in stock</a>
+      <a class="btn btn-ghost" href="#contact">Message us on Facebook</a>
+    </div>
+  </div>
+</div>
+
+<div class="marquee"><div>NEW SEASON STOCK &nbsp;•&nbsp; KIDS &amp; ADULT SIZES &nbsp;•&nbsp; NAMES &amp; NUMBERS ADDED &nbsp;•&nbsp; MESSAGE TO ORDER &nbsp;•&nbsp; NEW SEASON STOCK &nbsp;•&nbsp; KIDS &amp; ADULT SIZES &nbsp;•&nbsp; NAMES &amp; NUMBERS ADDED &nbsp;•&nbsp; MESSAGE TO ORDER &nbsp;</div></div>
+
+<section id="kits">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">CURRENT RANGE</span>
+      <h2>Kits in stock</h2>
+      <p>Swap these placeholder cards for your real kits, photos and prices — each one's set up the same way so it's quick to edit.</p>
+    </div>
+
+    <div class="grid" id="kit-grid">
+      <!-- Repeatable kit card. Duplicate this block for each kit you sell. -->
+      <div class="kit-card">
+        <div class="kit-shirt"><span class="num">10</span></div>
+        <div class="kit-body">
+          <div class="name">Kit name — e.g. Home 25/26</div>
+          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
+          <div class="row">
+            <span class="price">£XX</span>
+            <a class="order-link" href="#contact">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-card">
+        <div class="kit-shirt"><span class="num">7</span></div>
+        <div class="kit-body">
+          <div class="name">Kit name — e.g. Away 25/26</div>
+          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
+          <div class="row">
+            <span class="price">£XX</span>
+            <a class="order-link" href="#contact">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-card">
+        <div class="kit-shirt"><span class="num">9</span></div>
+        <div class="kit-body">
+          <div class="name">Kit name — e.g. Third Kit</div>
+          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
+          <div class="row">
+            <span class="price">£XX</span>
+            <a class="order-link" href="#contact">Order →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-card">
+        <div class="kit-shirt"><span class="num">1</span></div>
+        <div class="kit-body">
+          <div class="name">Kit name — e.g. Goalkeeper</div>
+          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
+          <div class="row">
+            <span class="price">£XX</span>
+            <a class="order-link" href="#contact">Order →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="placeholder-note">These four cards are placeholders — see the README that came with this file for exactly which bit of text/HTML to change to add your real kits and photos.</p>
+  </div>
+</section>
+
+<section id="how" style="background:#EFEBDD;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">EASY DOES IT</span>
+      <h2>How to order</h2>
+      <p>Same process you're used to — this page just makes it easier to browse first.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Pick your kit</h3>
+        <p>Browse what's in stock above and note the name, size and any name/number you want added.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>Send a message</h3>
+        <p>Message the Facebook page with your order — we'll confirm stock and total cost, including delivery if needed.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Pay &amp; collect or deliver</h3>
+        <p>Pay by bank transfer, then collect locally or we'll get it posted out to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div>
+      <h2>Ready for matchday?</h2>
+      <p>Drop us a message with the kit, size and any personalisation — we'll sort the rest.</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://www.facebook.com/profile.php?id=61553002254058" target="_blank" rel="noopener">
+        <span class="tag">Facebook</span> Little Kickers Football Kits
+      </a>
+      <a href="#" id="email-link">
+        <span class="tag">Email</span> add your email here
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> Little Kickers Football Kits. Replica kits sold as fan merchandise.</div>
+</footer>
+
+<div class="install-banner" id="installBanner">
+  <span>Add this to your home screen for quick access.</span>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <button id="installBtn">Install</button>
+    <button class="dismiss" id="dismissBtn" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // PWA install prompt handling
+  let deferredPrompt;
+  const banner = document.getElementById('installBanner');
+  const installBtn = document.getElementById('installBtn');
+  const dismissBtn = document.getElementById('dismissBtn');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (!sessionStorage.getItem('installDismissed')) {
+      banner.classList.add('show');
+    }
+  });
+
+  installBtn?.addEventListener('click', async () => {
+    banner.classList.remove('show');
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    }
+  });
+
+  dismissBtn?.addEventListener('click', () => {
+    banner.classList.remove('show');
+    sessionStorage.setItem('installDismissed', '1');
+  });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    });
+  }
+</script>
+
+</body>
+</html>
