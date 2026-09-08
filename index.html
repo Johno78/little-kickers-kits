@@ -59,7 +59,7 @@
     padding:9px 16px;border-radius:999px;font-weight:700;font-size:.9rem;
     text-decoration:none;
   }
-  .nav-links{display:none;gap:22px;font-size:.92rem;font-weight:500;}
+  .nav-links{display:none;gap:14px 20px;font-size:.88rem;font-weight:500;flex-wrap:wrap;max-width:480px;}
   @media(min-width:720px){.nav-links{display:flex;}}
 
   /* hero */
@@ -265,6 +265,8 @@
     <div class="brand"><img src="logo.png" alt="Little Kickers Football Kits" style="width:34px;height:34px;object-fit:contain;">Little Kickers Football Kits</div>
     <nav class="nav-links">
       <a href="#kits">Kits</a>
+      <a href="#apparel">Tracksuits &amp; Boots</a>
+      <a href="#sports">Other Sports</a>
       <a href="#how">How to order</a>
       <a href="#order-form">Order form</a>
       <a href="#contact">Contact</a>
@@ -276,24 +278,25 @@
 <div class="hero">
   <img class="hero-badge" src="logo.png" alt="" style="opacity:.14;">
   <div class="wrap">
-    <span class="kicker">NEW STOCK DROPPING WEEKLY</span>
+    <span class="kicker">FREE NAME &amp; NUMBER CUSTOMISATION</span>
     <h1>Kits for the terraces, not the trophy cabinet.</h1>
     <p class="lede">Replica football kits at prices that make sense. Order through the page, pay easy, collect or delivered — same friendly service you already know from Facebook.</p>
     <div class="actions">
-      <a class="btn btn-primary" href="#kits">See what's in stock</a>
+      <a class="btn btn-primary" href="#kits">Browse teams to order</a>
       <a class="btn btn-ghost" href="#contact">Message us on Facebook</a>
     </div>
   </div>
 </div>
 
-<div class="marquee"><div>NEW SEASON STOCK &nbsp;•&nbsp; KIDS &amp; ADULT SIZES &nbsp;•&nbsp; NAMES &amp; NUMBERS ADDED &nbsp;•&nbsp; MESSAGE TO ORDER &nbsp;•&nbsp; NEW SEASON STOCK &nbsp;•&nbsp; KIDS &amp; ADULT SIZES &nbsp;•&nbsp; NAMES &amp; NUMBERS ADDED &nbsp;•&nbsp; MESSAGE TO ORDER &nbsp;</div></div>
+<div class="marquee"><div>MADE TO ORDER &nbsp;•&nbsp; KIDS &amp; ADULT SIZES &nbsp;•&nbsp; FREE NAMES &amp; NUMBERS &nbsp;•&nbsp; MESSAGE TO ORDER &nbsp;•&nbsp; MADE TO ORDER &nbsp;•&nbsp; KIDS &amp; ADULT SIZES &nbsp;•&nbsp; FREE NAMES &amp; NUMBERS &nbsp;•&nbsp; MESSAGE TO ORDER &nbsp;</div></div>
 
 <section id="kits">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CURRENT RANGE</span>
-      <h2>Teams we stock</h2>
-      <p>Tap a team name to open the full team sheet — photos, sizes and stock status, all on our shared Google Sheet.</p>
+      <h2>Teams we can order</h2>
+      <p>Kits are made to order — tap a team name to open the full team sheet — photos, sizes and prices, all on our shared Google Sheet.</p>
+      <p style="margin-top:10px;font-weight:700;color:var(--ink);">Kids kits: £29.50 (shirt, shorts &amp; socks) · Adult kits: £29.50 (shirt, shorts &amp; socks — some are shirt only, check before ordering) · Name &amp; number customisation is FREE</p>
     </div>
 
     <div class="league-nav">
@@ -440,6 +443,50 @@
   </div>
 </section>
 
+<section id="apparel" style="background:#EFEBDD;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">MORE ON THE WAY</span>
+      <h2>Tracksuits &amp; boots</h2>
+      <p>Branching out beyond kits — sizes, prices and photos to follow.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+      <div class="league-panel league-panel-empty">
+        <h3 class="league-heading">Tracksuits</h3>
+        <p class="placeholder-note" style="margin-top:0;">Coming soon — message us to check availability.</p>
+      </div>
+      <div class="league-panel league-panel-empty">
+        <h3 class="league-heading">Football Boots</h3>
+        <p class="placeholder-note" style="margin-top:0;">Coming soon — message us to check availability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sports">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">BEYOND FOOTBALL</span>
+      <h2>Other sports</h2>
+      <p>Kits and merch from other sports — teams/drivers to follow, ordered in as requested.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+      <div class="league-panel league-panel-empty">
+        <h3 class="league-heading">Formula 1</h3>
+        <p class="placeholder-note" style="margin-top:0;">Coming soon — message us to check availability.</p>
+      </div>
+      <div class="league-panel league-panel-empty">
+        <h3 class="league-heading">Rugby Union</h3>
+        <p class="placeholder-note" style="margin-top:0;">Coming soon — message us to check availability.</p>
+      </div>
+      <div class="league-panel league-panel-empty">
+        <h3 class="league-heading">NFL</h3>
+        <p class="placeholder-note" style="margin-top:0;">Coming soon — message us to check availability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how" style="background:#EFEBDD;">
   <div class="wrap">
     <div class="section-head">
@@ -451,12 +498,12 @@
       <div class="step">
         <span class="num">01</span>
         <h3>Pick your kit</h3>
-        <p>Browse what's in stock above and note the name, size and any name/number you want added.</p>
+        <p>Browse the teams above and note the name, size and any name/number you want added — customisation's free.</p>
       </div>
       <div class="step">
         <span class="num">02</span>
         <h3>Send a message</h3>
-        <p>Message the Facebook page with your order — we'll confirm stock and total cost, including delivery if needed.</p>
+        <p>Message the Facebook page with your order — we'll confirm it's available to order in and the total cost, including delivery if needed.</p>
       </div>
       <div class="step">
         <span class="num">03</span>
