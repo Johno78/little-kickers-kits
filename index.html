@@ -6,6 +6,7 @@
 <title>Little Kickers Football Kits</title>
 <meta name="description" content="Replica football kits — order through Little Kickers Football Kits.">
 <meta name="theme-color" content="#163B2D">
+<meta name="robots" content="noindex, nofollow">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" href="icons/icon-192.png">
@@ -95,12 +96,8 @@
   .btn-ghost{border-color:rgba(245,241,230,.4);color:var(--chalk);}
   .btn-ghost:hover{border-color:var(--chalk);}
   .hero-badge{
-    position:absolute;right:-40px;top:20px;width:340px;height:340px;
-    border-radius:50%;border:2px solid rgba(245,241,230,.14);
-  }
-  .hero-badge::after{
-    content:"";position:absolute;inset:34px;border-radius:50%;
-    border:2px solid rgba(245,241,230,.1);
+    position:absolute;right:-30px;top:10px;width:340px;height:340px;
+    object-fit:contain;pointer-events:none;
   }
 
   /* marquee */
@@ -150,6 +147,26 @@
     color:#6B786F;font-size:.9rem;
   }
 
+  /* league panels (team lists) */
+  .league-panel{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px 26px;
+  }
+  .league-panel-empty{background:transparent;border-style:dashed;}
+  .team-list{
+    list-style:none;margin:0;padding:0;
+    display:grid;gap:2px 24px;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  }
+  .team-list li{border-bottom:1px solid var(--line);}
+  .team-list li:last-child,
+  .team-list li:nth-last-child(2){border-bottom:none;}
+  .team-list a{
+    display:block;padding:10px 4px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;
+    transition:color .15s;
+  }
+  .team-list a:hover{color:var(--amber-dark);}
+
   /* league nav + sections */
   .league-nav{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 44px;}
   .league-nav a{
@@ -158,6 +175,12 @@
     font-size:.85rem;font-weight:600;text-decoration:none;color:var(--ink);
   }
   .league-nav a:hover{border-color:var(--amber-dark);color:var(--amber-dark);}
+  .drive-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:18px;
+    padding:9px 16px;border-radius:999px;background:var(--pitch-dark);color:var(--chalk);
+    font-size:.85rem;font-weight:700;text-decoration:none;
+  }
+  .drive-link:hover{background:var(--pitch-mid);}
   .league-block{margin-bottom:52px;}
   .league-block:last-child{margin-bottom:0;}
   .league-heading{
@@ -246,7 +269,7 @@
 
 <header>
   <div class="nav">
-    <div class="brand"><span class="dot"></span>Little Kickers Football Kits</div>
+    <div class="brand"><img src="logo.png" alt="Little Kickers Football Kits" style="width:34px;height:34px;object-fit:contain;">Little Kickers Football Kits</div>
     <nav class="nav-links">
       <a href="#kits">Kits</a>
       <a href="#how">How to order</a>
@@ -258,7 +281,7 @@
 </header>
 
 <div class="hero">
-  <div class="hero-badge"></div>
+  <img class="hero-badge" src="logo.png" alt="" style="opacity:.14;">
   <div class="wrap">
     <span class="kicker">NEW STOCK DROPPING WEEKLY</span>
     <h1>Kits for the terraces, not the trophy cabinet.</h1>
@@ -276,8 +299,8 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">CURRENT RANGE</span>
-      
-      
+      <h2>Teams we stock</h2>
+      <p>Tap a team name to open the full team sheet — photos, sizes and stock status, all on our shared Google Sheet.</p>
     </div>
 
     <div class="league-nav">
@@ -290,226 +313,137 @@
     </div>
 
     <div class="league-block" id="pl">
-      <h3 class="league-heading"><img class="badge" src="logos/premier-league.jpg" alt="" onerror="this.style.display='none'">Premier League</h3>
-      <div class="grid" id="kit-grid">
-      <!-- Repeatable kit card. Duplicate this block for each kit you sell. -->
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/man-utd-away.jpg" alt="Machester United Away" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Manchester United Away 26/27</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/liverpool-home-jpg" alt="Liverpool Home" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Liverpool Home 26/27</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/man-city-all.jpg" alt="Manchester City Kits" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Manchester City Kits</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/liverpool-away.jpg" alt="Liverpool Away 26/27" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Liverpool Away 26/27</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/man-city-away.jpg" alt="Manchester City Away" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Manchester City Away 26/27</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/man-city-third.jpg" alt="Manchester City Third" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Manchester City Third 26/27</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/man-city-goalie.jpg" alt="Manchester City Goalkeeper" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Manchester City Goalkeeper</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/man-utd-home.jpg" alt="Manchester United Home" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Manchester United Home 26/27</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-card">
-        <div class="kit-shirt" style="background:none;">
-  <img src="kits/man-utd-third.jpg" alt="Manchester United Third" style="width:100%;height:100%;object-fit:cover;">
-</div>
-        <div class="kit-body">
-          <div class="name">Manchester United Third 26/27</div>
-          <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
-          <div class="row">
-            <span class="price">£29.50</span>
-            <a class="order-link" href="#contact">Order →</a>
-          </div>
-        </div>
-      </div>
+      <div class="league-panel">
+        <h3 class="league-heading"><img class="badge" src="logos/premier-league.jpg" alt="" onerror="this.style.display='none'">Premier League</h3>
+        <ul class="team-list">
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Arsenal</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Aston Villa</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Bournemouth</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Brentford</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Brighton & Hove Albion</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Chelsea</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Coventry City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Crystal Palace</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Everton</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Fulham</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Hull City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Ipswich Town</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Leeds United</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Liverpool</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Manchester City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Manchester United</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Newcastle United</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Nottingham Forest</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Sunderland</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Tottenham Hotspur</a></li>
+        </ul>
+        <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener">Open full team sheet →</a>
       </div>
     </div>
-<div class="league-block" id="champ">
-      <h3 class="league-heading"><img class="badge" src="logos/premier-league.jpg" alt="" onerror="this.style.display='none'">Premier League</h3>
-      <div class="grid">
-        <a class="kit-card" href="#contact">
-          <div class="kit-shirt" style="background:#fff;padding:14px;">
-            <img src="logos/premier-league.jpg" alt="premier league" style="width:100%;height:100%;object-fit:contain;">
-          </div>
-          <div class="kit-body">
-            <div class="name">premier league</div>
-            <div class="meta">Kits coming soon — tap to message us</div>
-          </div>
-        </a>
-      </div>
-    </div>
+
     <div class="league-block" id="champ">
-      <h3 class="league-heading"><img class="badge" src="logos/championship-logo.jpg" alt="" onerror="this.style.display='none'">Championship</h3>
-      <div class="grid">
-        <a class="kit-card" href="#contact">
-          <div class="kit-shirt" style="background:#fff;padding:14px;">
-            <img src="logos/championship-logo.jpg" alt="Championship" style="width:100%;height:100%;object-fit:contain;">
-          </div>
-          <div class="kit-body">
-            <div class="name">Championship</div>
-            <div class="meta">Kits coming soon — tap to message us</div>
-          </div>
-        </a>
+      <div class="league-panel">
+        <h3 class="league-heading"><img class="badge" src="logos/championship-logo.jpg" alt="" onerror="this.style.display='none'">Championship</h3>
+        <ul class="team-list">
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Birmingham City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Blackburn Rovers</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Bolton Wanderers</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Bristol City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Burnley</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Cardiff City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Charlton Athletic</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Derby County</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Lincoln City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Middlesbrough</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Millwall</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Norwich City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Portsmouth</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Preston North End</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Queens Park Rangers</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Sheffield United</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Southampton</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Stoke City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Swansea City</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Watford</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">West Bromwich Albion</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">West Ham United</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Wolverhampton Wanderers</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Wrexham</a></li>
+        </ul>
+        <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener">Open full team sheet →</a>
       </div>
     </div>
 
     <div class="league-block" id="ligue1">
-      <h3 class="league-heading"><img class="badge" src="logos/ligue-1-logo.png" alt="" onerror="this.style.display='none'">French League</h3>
-      <div class="grid">
-        <a class="kit-card" href="#contact">
-          <div class="kit-shirt" style="background:#fff;padding:14px;">
-            <img src="logos/ligue-1-logo.png" alt="French League" style="width:100%;height:100%;object-fit:contain;">
-          </div>
-          <div class="kit-body">
-            <div class="name">French League</div>
-            <div class="meta">Kits coming soon — tap to message us</div>
-          </div>
-        </a>
+      <div class="league-panel">
+        <h3 class="league-heading"><img class="badge" src="logos/ligue-1-logo.png" alt="" onerror="this.style.display='none'">French League</h3>
+        <ul class="team-list">
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Angers</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Auxerre</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Brest</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Le Havre</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Le Mans</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lens</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lille</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lorient</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lyon</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Marseille</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Monaco</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Nice</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Paris FC</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Paris Saint-Germain</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Rennes</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Strasbourg</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Toulouse</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Troyes</a></li>
+        </ul>
+        <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Open full team sheet →</a>
       </div>
     </div>
 
     <div class="league-block" id="laliga">
-      <h3 class="league-heading"><img class="badge" src="logos/laliga-logo.png" alt="" onerror="this.style.display='none'">Spanish League</h3>
-      <div class="grid">
-        <a class="kit-card" href="#contact">
-          <div class="kit-shirt" style="background:#fff;padding:14px;">
-            <img src="logos/laliga-logo.png" alt="Spanish League" style="width:100%;height:100%;object-fit:contain;">
-          </div>
-          <div class="kit-body">
-            <div class="name">Spanish League</div>
-            <div class="meta">Kits coming soon — tap to message us</div>
-          </div>
-        </a>
+      <div class="league-panel">
+        <h3 class="league-heading"><img class="badge" src="logos/laliga-logo.png" alt="" onerror="this.style.display='none'">Spanish League</h3>
+        <ul class="team-list">
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Alavés</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Athletic Bilbao</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Atlético Madrid</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Barcelona</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Celta Vigo</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Deportivo A Coruña</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Elche</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Espanyol</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Getafe</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Levante</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Málaga</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Osasuna</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Racing Santander</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Rayo Vallecano</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Real Betis</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Real Madrid</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Real Sociedad</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Sevilla</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Valencia</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Villarreal</a></li>
+        </ul>
+        <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Open full team sheet →</a>
       </div>
     </div>
 
     <div class="league-block" id="seriea">
-      <h3 class="league-heading"><img class="badge" src="logos/serie-a-logo.jpeg" alt="" onerror="this.style.display='none'">Italian League</h3>
-      <div class="grid">
-        <a class="kit-card" href="#contact">
-          <div class="kit-shirt" style="background:#fff;padding:14px;">
-            <img src="logos/serie-a-logo.jpeg" alt="Italian League" style="width:100%;height:100%;object-fit:contain;">
-          </div>
-          <div class="kit-body">
-            <div class="name">Italian League</div>
-            <div class="meta">Kits coming soon — tap to message us</div>
-          </div>
-        </a>
+      <div class="league-panel league-panel-empty">
+        <h3 class="league-heading"><img class="badge" src="logos/serie-a-logo.jpeg" alt="" onerror="this.style.display='none'">Italian League</h3>
+        <p class="placeholder-note" style="margin-top:0;">Teams coming soon — message us to check availability.</p>
       </div>
     </div>
 
     <div class="league-block" id="intl">
-      <h3 class="league-heading"><img class="badge" src="logos/international-teams-logo.jpg" alt="" onerror="this.style.display='none'">International</h3>
-      <div class="grid">
-        <a class="kit-card" href="#contact">
-          <div class="kit-shirt" style="background:#fff;padding:14px;">
-            <img src="logos/international-teams-logo.jpg" alt="International" style="width:100%;height:100%;object-fit:contain;">
-          </div>
-          <div class="kit-body">
-            <div class="name">International</div>
-            <div class="meta">Kits coming soon — tap to message us</div>
-          </div>
-        </a>
+      <div class="league-panel league-panel-empty">
+        <h3 class="league-heading"><img class="badge" src="logos/international-teams-logo.jpg" alt="" onerror="this.style.display='none'">International</h3>
+        <p class="placeholder-note" style="margin-top:0;">Teams coming soon — message us to check availability.</p>
       </div>
     </div>
 
-    
   </div>
 </section>
 
@@ -596,7 +530,7 @@
         <span class="tag">Facebook</span> Little Kickers Football Kits
       </a>
       <a href="#" id="email-link">
-        <span class="tag">Email</span> littlekickersiom@gmail.com
+        <span class="tag">Email</span> add your email here
       </a>
     </div>
   </div>
@@ -619,7 +553,7 @@
 
   // Order form -> pre-filled email
   // TODO: replace with your real order email address
-  const ORDER_EMAIL = 'littlekickersiom@icloud.com';
+  const ORDER_EMAIL = 'add-your-email-here@example.com';
 
   document.getElementById('orderForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
