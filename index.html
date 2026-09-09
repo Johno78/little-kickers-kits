@@ -165,6 +165,18 @@
     transition:color .15s;
   }
   .team-list a:hover{color:var(--amber-dark);}
+  .team-list a.orderable{color:var(--pitch-dark);}
+  .team-list .tag-order{
+    display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;
+    background:var(--amber);color:var(--pitch-dark);font-size:.68rem;font-weight:800;
+    text-transform:uppercase;letter-spacing:.3px;vertical-align:middle;
+  }
+  .team-list a.unavailable{color:#9AA5A0;font-weight:500;}
+  .team-list .tag-unavail{
+    display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;
+    background:#EEEBE0;color:#8A9A90;font-size:.68rem;font-weight:700;
+    text-transform:uppercase;letter-spacing:.3px;vertical-align:middle;
+  }
 
   /* league nav + sections */
   .league-nav{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 44px;}
@@ -373,25 +385,26 @@
     <div class="league-block" id="ligue1">
       <div class="league-panel">
         <h3 class="league-heading"><img class="badge" src="logos/ligue-1-logo.png" alt="" onerror="this.style.display='none'">French League</h3>
+        <p class="placeholder-note" style="margin:0 0 14px;">Only teams tagged "Order now" can be ordered right now — the rest aren't available yet.</p>
         <ul class="team-list">
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Angers</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Auxerre</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Brest</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Le Havre</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Le Mans</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lens</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lille</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lorient</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Lyon</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Marseille</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Monaco</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Nice</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Paris FC</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Paris Saint-Germain</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Rennes</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Strasbourg</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Toulouse</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Troyes</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Angers <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Auxerre <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Brest <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Le Havre <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Le Mans <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Lens <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Lille <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Lorient <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Lyon <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Marseille <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Monaco <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Nice <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Paris FC <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Paris Saint-Germain <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Rennes <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Strasbourg <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Toulouse <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Troyes <span class="tag-unavail">Not yet available</span></a></li>
         </ul>
         <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg/edit?usp=drive_link" target="_blank" rel="noopener">Open full team sheet →</a>
       </div>
@@ -400,27 +413,28 @@
     <div class="league-block" id="laliga">
       <div class="league-panel">
         <h3 class="league-heading"><img class="badge" src="logos/laliga-logo.png" alt="" onerror="this.style.display='none'">Spanish League</h3>
+        <p class="placeholder-note" style="margin:0 0 14px;">Only teams tagged "Order now" can be ordered right now — the rest aren't available yet.</p>
         <ul class="team-list">
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Alavés</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Athletic Bilbao</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Atlético Madrid</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Barcelona</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Celta Vigo</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Deportivo A Coruña</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Elche</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Espanyol</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Getafe</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Levante</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Málaga</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Osasuna</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Racing Santander</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Rayo Vallecano</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Real Betis</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Real Madrid</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Real Sociedad</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Sevilla</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Valencia</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Villarreal</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Alavés <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Athletic Bilbao <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Atlético Madrid <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Barcelona <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Celta Vigo <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Deportivo A Coruña <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Elche <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Espanyol <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Getafe <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Levante <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Málaga <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Osasuna <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Racing Santander <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Rayo Vallecano <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Real Betis <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="orderable">Real Madrid <span class="tag-order">Order now</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Real Sociedad <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Sevilla <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Valencia <span class="tag-unavail">Not yet available</span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener" class="unavailable">Villarreal <span class="tag-unavail">Not yet available</span></a></li>
         </ul>
         <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs/edit?usp=drive_link" target="_blank" rel="noopener">Open full team sheet →</a>
       </div>
