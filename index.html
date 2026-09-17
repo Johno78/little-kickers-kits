@@ -729,6 +729,80 @@ Notes: ${f.notes.value || '—'}`;
     sessionStorage.setItem('installDismissed', '1');
   });
 
+  // Live stock sync — pulls current Stock column from each league's Google Sheet
+  // so team status updates automatically without editing this file.
+  const LEAGUE_SHEETS = {
+    '#pl .team-list': '1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU',
+    '#champ .team-list': '1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg',
+    '#ligue1 .team-list': '1VzlUvdxRt040VSWbzS22ewqrEmu92xsjvPZdywetOtg',
+    '#laliga .team-list': '1LVG9Prv3ndnj3HObss8YRkXSXSDkojddIaxX0rq3tJs',
+    '#seriea .team-list': '1ZCGaHSYCJ51eiyf7Wz1MlLBpsc1TvBZsdnseZx_vPt4',
+    '#spl .team-list': '1XGW-VNmDpYQmqxk1sx0if1o4RQNoZgAZ-y_4DQ0JBxA',
+    '#bundesliga .team-list': '16qDsiUebCxSy-OPVR15ba96Q-SsB7MfxSuOvW5yE0rQ'
+  };
+
+  function parseCSV(str) {
+    const rows = [];
+    let row = [], field = '', inQuotes = false;
+    for (let i = 0; i < str.length; i++) {
+      const c = str[i];
+      if (inQuotes) {
+        if (c === '"') {
+          if (str[i + 1] === '"') { field += '"'; i++; }
+          else inQuotes = false;
+        } else field += c;
+      } else {
+        if (c === '"') inQuotes = true;
+        else if (c === ',') { row.push(field); field = ''; }
+        else if (c === '\n') { row.push(field); rows.push(row); row = []; field = ''; }
+        else if (c === '\r') { /* skip */ }
+        else field += c;
+      }
+    }
+    if (field.length || row.length) { row.push(field); rows.push(row); }
+    return rows;
+  }
+
+  async function syncLeagueStock(selector, sheetId) {
+    try {
+      const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&gid=0`;
+      const res = await fetch(url);
+      if (!res.ok) return;
+      const rows = parseCSV(await res.text());
+      if (!rows.length) return;
+      const header = rows[0].map(h => (h || '').trim().toLowerCase());
+      const teamIdx = header.indexOf('team');
+      const stockIdx = header.indexOf('stock');
+      if (teamIdx === -1 || stockIdx === -1) return;
+
+      const statusMap = {};
+      for (let i = 1; i < rows.length; i++) {
+        const r = rows[i];
+        if (!r[teamIdx]) continue;
+        statusMap[r[teamIdx].trim()] = (r[stockIdx] || '').trim();
+      }
+
+      document.querySelectorAll(selector + ' li a').forEach((a) => {
+        const tagEl = a.querySelector('.tag-order, .tag-unavail');
+        let name = a.textContent.trim();
+        if (tagEl) name = name.replace(tagEl.textContent, '').trim();
+        const status = statusMap[name];
+        if (!status) return;
+        const orderable = /message to order/i.test(status);
+        a.classList.remove('orderable', 'unavailable');
+        a.classList.add(orderable ? 'orderable' : 'unavailable');
+        if (tagEl) {
+          tagEl.className = orderable ? 'tag-order' : 'tag-unavail';
+          tagEl.textContent = orderable ? 'Order now' : 'Not yet available';
+        }
+      });
+    } catch (e) { /* fetch blocked or sheet not public — static list stays as-is */ }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    Object.entries(LEAGUE_SHEETS).forEach(([selector, id]) => syncLeagueStock(selector, id));
+  });
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('service-worker.js').catch(() => {});
