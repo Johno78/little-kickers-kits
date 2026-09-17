@@ -181,6 +181,20 @@
   }
   .shirt-modal-images{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
   .shirt-modal-images img{width:100%;border-radius:10px;border:1px solid var(--line);background:#fff;}
+
+  .size-table{width:100%;border-collapse:collapse;min-width:600px;font-size:.88rem;}
+  .size-table th{
+    background:var(--pitch-dark);color:var(--chalk);text-align:left;
+    padding:10px 12px;font-weight:700;white-space:nowrap;
+  }
+  .size-table td{padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap;}
+  .size-table tbody tr:nth-child(odd){background:#F8F6EF;}
+  .size-table td:first-child{font-weight:800;color:var(--pitch-dark);}
+  .size-guide-link{
+    display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;
+    color:var(--amber-dark);text-decoration:none;border-bottom:1px solid var(--amber-dark);
+    cursor:pointer;margin-top:6px;
+  }
   .team-list a.orderable{color:var(--pitch-dark);}
   .team-list .tag-order{
     display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;
@@ -343,7 +357,7 @@
         <h3 class="league-heading"><img class="badge" src="logos/premier-league.jpg" alt="" onerror="this.style.display='none'">Premier League</h3>
         <div class="grid">
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Arsenal', ['https://drive.google.com/thumbnail?id=1YHQxjwJU7Q8JJfN2aUlgtdZ7P_TS1fk8&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Arsenal', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1YHQxjwJU7Q8JJfN2aUlgtdZ7P_TS1fk8&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1YHQxjwJU7Q8JJfN2aUlgtdZ7P_TS1fk8&sz=w400" alt="Arsenal" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -356,7 +370,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Aston Villa', ['https://drive.google.com/thumbnail?id=11_fRw65Pz3deiqwMAY8RHKTg01ZVIa0R&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Aston Villa', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=11_fRw65Pz3deiqwMAY8RHKTg01ZVIa0R&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=11_fRw65Pz3deiqwMAY8RHKTg01ZVIa0R&sz=w400" alt="Aston Villa" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -369,7 +383,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Bournemouth', ['https://drive.google.com/thumbnail?id=18InfTRcWb47nOyoml5faevVeO3OrxgrR&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Bournemouth', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=18InfTRcWb47nOyoml5faevVeO3OrxgrR&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=18InfTRcWb47nOyoml5faevVeO3OrxgrR&sz=w400" alt="Bournemouth" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -382,7 +396,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Brentford', ['https://drive.google.com/thumbnail?id=1sxoZSa7H0f-o2OIsFDqcwcOqDRZSEP8T&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Brentford', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1sxoZSa7H0f-o2OIsFDqcwcOqDRZSEP8T&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1sxoZSa7H0f-o2OIsFDqcwcOqDRZSEP8T&sz=w400" alt="Brentford" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -395,7 +409,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Brighton & Hove Albion', ['https://drive.google.com/thumbnail?id=14SaGYVUQ-XzlJxjSQoQDPJkptEyRKcBJ&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Brighton & Hove Albion', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=14SaGYVUQ-XzlJxjSQoQDPJkptEyRKcBJ&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=14SaGYVUQ-XzlJxjSQoQDPJkptEyRKcBJ&sz=w400" alt="Brighton & Hove Albion" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -408,7 +422,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Chelsea', ['https://drive.google.com/thumbnail?id=10Pz_3thtL6OnSY-vXPfzF4Mv24jbUE8t&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Chelsea', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=10Pz_3thtL6OnSY-vXPfzF4Mv24jbUE8t&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=10Pz_3thtL6OnSY-vXPfzF4Mv24jbUE8t&sz=w400" alt="Chelsea" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -421,7 +435,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Coventry City', ['https://drive.google.com/thumbnail?id=1oVpaL7h2xREzKs7fwL61Y9Atzxp9jWf7&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Coventry City', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1oVpaL7h2xREzKs7fwL61Y9Atzxp9jWf7&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1oVpaL7h2xREzKs7fwL61Y9Atzxp9jWf7&sz=w400" alt="Coventry City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -434,7 +448,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Crystal Palace', ['https://drive.google.com/thumbnail?id=1J2hGEChp3Nbmyh_Kcjds-E7HpoAJGAdz&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Crystal Palace', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1J2hGEChp3Nbmyh_Kcjds-E7HpoAJGAdz&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1J2hGEChp3Nbmyh_Kcjds-E7HpoAJGAdz&sz=w400" alt="Crystal Palace" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -447,7 +461,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Everton', ['https://drive.google.com/thumbnail?id=1JpJLhRRPrsJWlEDgJfrisEZ3ezuuoy1P&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Everton', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1JpJLhRRPrsJWlEDgJfrisEZ3ezuuoy1P&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1JpJLhRRPrsJWlEDgJfrisEZ3ezuuoy1P&sz=w400" alt="Everton" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -460,7 +474,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Fulham', ['https://drive.google.com/thumbnail?id=1QXx-cV_Ug09fyQacmoWXfJd7T0xtTtyr&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Fulham', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1QXx-cV_Ug09fyQacmoWXfJd7T0xtTtyr&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1QXx-cV_Ug09fyQacmoWXfJd7T0xtTtyr&sz=w400" alt="Fulham" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -473,7 +487,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Hull City', ['https://drive.google.com/thumbnail?id=1M55cJkeqc8ghJYX9MW8fulMYNP3DZjZF&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Hull City', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1M55cJkeqc8ghJYX9MW8fulMYNP3DZjZF&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1M55cJkeqc8ghJYX9MW8fulMYNP3DZjZF&sz=w400" alt="Hull City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -486,7 +500,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Ipswich Town', ['https://drive.google.com/thumbnail?id=1wLiUuoNvjewN6k_0sfREGwHokzFe68eG&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Ipswich Town', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1wLiUuoNvjewN6k_0sfREGwHokzFe68eG&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1wLiUuoNvjewN6k_0sfREGwHokzFe68eG&sz=w400" alt="Ipswich Town" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -499,7 +513,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Leeds United', ['https://drive.google.com/thumbnail?id=1Jzoi1JAnk1GgLW_r85Nv9F8PtpP9laZn&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Leeds United', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1Jzoi1JAnk1GgLW_r85Nv9F8PtpP9laZn&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1Jzoi1JAnk1GgLW_r85Nv9F8PtpP9laZn&sz=w400" alt="Leeds United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -512,7 +526,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Liverpool', ['https://drive.google.com/thumbnail?id=1eACbOdVy6SR137dps_PUlCD9mSa9mfEf&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Liverpool', [{label:'Home',url:'https://drive.google.com/thumbnail?id=1eACbOdVy6SR137dps_PUlCD9mSa9mfEf&sz=w800'},{label:'Away',url:'https://drive.google.com/thumbnail?id=1CbLOl6k8dZNZonMHM4Bskyi61jCnZRC0&sz=w800'},{label:'Group',url:'https://drive.google.com/thumbnail?id=1TodVROO5Z6XhZvayCzkSlIBchkyHbV61&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1eACbOdVy6SR137dps_PUlCD9mSa9mfEf&sz=w400" alt="Liverpool" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -525,8 +539,8 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Manchester City', ['https://drive.google.com/thumbnail?id=15X0EgQXQElNwUCxL2ZjtQ7iTZbkLPLPV&sz=w800'])">
-            <img src="https://drive.google.com/thumbnail?id=15X0EgQXQElNwUCxL2ZjtQ7iTZbkLPLPV&sz=w400" alt="Manchester City" style="width:100%;height:100%;object-fit:cover;">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Manchester City', [{label:'Away',url:'https://drive.google.com/thumbnail?id=1yjdBpWJ3xgy0YEJULYBbZ7swejCHSJer&sz=w800'},{label:'Third',url:'https://drive.google.com/thumbnail?id=1DoCV0Yhq6ceHsQUwDpwC5Q2MyWpmyMpl&sz=w800'},{label:'Goalkeeper',url:'https://drive.google.com/thumbnail?id=1GeCatoqDStX1Gc3Ox2R6uF0bCPnvvSrh&sz=w800'},{label:'Group',url:'https://drive.google.com/thumbnail?id=15X0EgQXQElNwUCxL2ZjtQ7iTZbkLPLPV&sz=w800'}])">
+            <img src="https://drive.google.com/thumbnail?id=1yjdBpWJ3xgy0YEJULYBbZ7swejCHSJer&sz=w400" alt="Manchester City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
             <div class="name">Manchester City</div>
@@ -538,8 +552,8 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Manchester United', ['https://drive.google.com/thumbnail?id=1b0lvYY1ub3bDqf-5Kamk6kioSqpxlIXD&sz=w800'])">
-            <img src="https://drive.google.com/thumbnail?id=1b0lvYY1ub3bDqf-5Kamk6kioSqpxlIXD&sz=w400" alt="Manchester United" style="width:100%;height:100%;object-fit:cover;">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Manchester United', [{label:'Home',url:'https://drive.google.com/thumbnail?id=1YEfmdHhtEWSmig2j1d5sPHTySdy7ZUKz&sz=w800'},{label:'Away',url:'https://drive.google.com/thumbnail?id=1HnsvmNjzycgK04QIspirLFKHQRm69Cw2&sz=w800'},{label:'Third',url:'https://drive.google.com/thumbnail?id=1Ly8DBmH4yK090plSTnw0Hb0aAPvo7WSr&sz=w800'},{label:'Group',url:'https://drive.google.com/thumbnail?id=1b0lvYY1ub3bDqf-5Kamk6kioSqpxlIXD&sz=w800'}])">
+            <img src="https://drive.google.com/thumbnail?id=1YEfmdHhtEWSmig2j1d5sPHTySdy7ZUKz&sz=w400" alt="Manchester United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
             <div class="name">Manchester United</div>
@@ -551,7 +565,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Newcastle United', ['https://drive.google.com/thumbnail?id=1X--ChHXTLuEIArBjl1nqln301ORF9KcI&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Newcastle United', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1X--ChHXTLuEIArBjl1nqln301ORF9KcI&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1X--ChHXTLuEIArBjl1nqln301ORF9KcI&sz=w400" alt="Newcastle United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -564,7 +578,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Nottingham Forest', ['https://drive.google.com/thumbnail?id=1SXQMv0DaOpbYx3frLvmMUdgZBgBoJiLx&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Nottingham Forest', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1SXQMv0DaOpbYx3frLvmMUdgZBgBoJiLx&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1SXQMv0DaOpbYx3frLvmMUdgZBgBoJiLx&sz=w400" alt="Nottingham Forest" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -577,7 +591,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Sunderland', ['https://drive.google.com/thumbnail?id=1gfvmbmM6-3QXxVFSccA5wJDYkRW1nhOf&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Sunderland', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1gfvmbmM6-3QXxVFSccA5wJDYkRW1nhOf&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1gfvmbmM6-3QXxVFSccA5wJDYkRW1nhOf&sz=w400" alt="Sunderland" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -590,7 +604,7 @@
           </div>
         </div>
         <div class="kit-card">
-          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Tottenham Hotspur', ['https://drive.google.com/thumbnail?id=1f3COhoWlKOZB9nrYJFZY3-QugxR1FRap&sz=w800'])">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Tottenham Hotspur', [{label:'Photo',url:'https://drive.google.com/thumbnail?id=1f3COhoWlKOZB9nrYJFZY3-QugxR1FRap&sz=w800'}])">
             <img src="https://drive.google.com/thumbnail?id=1f3COhoWlKOZB9nrYJFZY3-QugxR1FRap&sz=w400" alt="Tottenham Hotspur" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -1181,6 +1195,7 @@
       <div>
         <label for="of-size">Size</label>
         <input type="text" id="of-size" name="size" placeholder="e.g. Kids 9-10, Adult M" required>
+        <a class="size-guide-link" onclick="openSizeGuide()">📏 Kids size guide</a>
       </div>
       <div>
         <label for="of-qty">Quantity</label>
@@ -1222,6 +1237,38 @@
 <footer>
   <div class="wrap">&copy; <span id="year"></span> Little Kickers Football Kits. Replica kits sold as fan merchandise.</div>
 </footer>
+
+<div class="shirt-modal" id="sizeGuideModal">
+  <div class="shirt-modal-backdrop" onclick="closeSizeGuide()"></div>
+  <div class="shirt-modal-box" style="max-width:760px;">
+    <button class="shirt-modal-close" onclick="closeSizeGuide()" aria-label="Close">✕</button>
+    <h3>Kids kit size guide</h3>
+    <div style="overflow-x:auto;">
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Age (yrs)</th>
+            <th>Fit Height (in/cm)</th>
+            <th>Length (in/cm)</th>
+            <th>Chest (in/cm)</th>
+            <th>Length, Short (in/cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>XXS=16</td><td>2–4</td><td>35.4–41.3 / 90–105</td><td>17.3 / 44</td><td>13.8 / 35</td><td>12.6 / 32</td></tr>
+          <tr><td>XS=18</td><td>4–5</td><td>41.3–45.3 / 105–115</td><td>18.5 / 47</td><td>14.6 / 37</td><td>13.4 / 34</td></tr>
+          <tr><td>S=20</td><td>5–6</td><td>45.3–49.2 / 115–125</td><td>19.7 / 50</td><td>15.4 / 39</td><td>14.2 / 36</td></tr>
+          <tr><td>M=22</td><td>7–8</td><td>49.2–53.1 / 125–135</td><td>20.9 / 53</td><td>16.1 / 41</td><td>15.0 / 38</td></tr>
+          <tr><td>L=24</td><td>8–9</td><td>53.1–57.1 / 135–145</td><td>22.0 / 56</td><td>16.9 / 43</td><td>15.4 / 39</td></tr>
+          <tr><td>XL=26</td><td>10–11</td><td>57.1–61.0 / 145–155</td><td>23.2 / 59</td><td>17.7 / 45</td><td>15.7 / 40</td></tr>
+          <tr><td>XXL=28</td><td>12–13</td><td>61.0–65.0 / 155–165</td><td>24.4 / 62</td><td>18.5 / 47</td><td>16.9 / 43</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:14px;font-size:.85rem;color:#6B786F;">Tip: if your child is between sizes, we recommend choosing the larger size for a more comfortable fit.</p>
+  </div>
+</div>
 
 <div class="shirt-modal" id="shirtModal">
   <div class="shirt-modal-backdrop" onclick="closeShirtModal()"></div>
@@ -1315,11 +1362,19 @@ Notes: ${f.notes.value || '—'}`;
     document.getElementById('shirtModalTitle').textContent = team;
     const wrap = document.getElementById('shirtModalImages');
     wrap.innerHTML = '';
-    images.forEach((src) => {
+    images.forEach((item) => {
+      const box = document.createElement('div');
       const img = document.createElement('img');
-      img.src = src;
-      img.alt = team;
-      wrap.appendChild(img);
+      img.src = item.url;
+      img.alt = team + ' ' + item.label;
+      box.appendChild(img);
+      if (images.length > 1) {
+        const cap = document.createElement('div');
+        cap.textContent = item.label;
+        cap.style.cssText = 'text-align:center;font-size:.8rem;font-weight:700;margin-top:6px;color:#4B5A52;';
+        box.appendChild(cap);
+      }
+      wrap.appendChild(box);
     });
     document.getElementById('shirtModalKitType').value = '';
     document.getElementById('shirtModalOrder').onclick = () => {
@@ -1332,6 +1387,14 @@ Notes: ${f.notes.value || '—'}`;
 
   function closeShirtModal() {
     document.getElementById('shirtModal').classList.remove('show');
+  }
+
+  function openSizeGuide() {
+    document.getElementById('sizeGuideModal').classList.add('show');
+  }
+
+  function closeSizeGuide() {
+    document.getElementById('sizeGuideModal').classList.remove('show');
   }
 
   // Live stock sync — pulls current Stock column from each league's Google Sheet
