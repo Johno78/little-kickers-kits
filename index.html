@@ -165,6 +165,22 @@
     transition:color .15s;
   }
   .team-list a:hover{color:var(--amber-dark);}
+
+  /* shirt gallery modal */
+  .shirt-modal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;padding:20px;}
+  .shirt-modal.show{display:flex;}
+  .shirt-modal-backdrop{position:absolute;inset:0;background:rgba(14,32,25,.7);}
+  .shirt-modal-box{
+    position:relative;background:var(--card);border-radius:14px;padding:28px;
+    max-width:640px;width:100%;max-height:85vh;overflow-y:auto;
+  }
+  .shirt-modal-box h3{font-family:'Inter';font-size:1.2rem;font-weight:800;margin-bottom:16px;padding-right:30px;}
+  .shirt-modal-close{
+    position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.2rem;
+    cursor:pointer;color:#6B786F;
+  }
+  .shirt-modal-images{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+  .shirt-modal-images img{width:100%;border-radius:10px;border:1px solid var(--line);background:#fff;}
   .team-list a.orderable{color:var(--pitch-dark);}
   .team-list .tag-order{
     display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;
@@ -326,8 +342,8 @@
       <div class="league-panel">
         <h3 class="league-heading"><img class="badge" src="logos/premier-league.jpg" alt="" onerror="this.style.display='none'">Premier League</h3>
         <div class="grid">
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Arsenal')">
-          <div class="kit-shirt" style="background:#fff;">
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Arsenal', ['https://drive.google.com/thumbnail?id=1YHQxjwJU7Q8JJfN2aUlgtdZ7P_TS1fk8&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1YHQxjwJU7Q8JJfN2aUlgtdZ7P_TS1fk8&sz=w400" alt="Arsenal" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -335,12 +351,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Arsenal')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Aston Villa')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Aston Villa', ['https://drive.google.com/thumbnail?id=11_fRw65Pz3deiqwMAY8RHKTg01ZVIa0R&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=11_fRw65Pz3deiqwMAY8RHKTg01ZVIa0R&sz=w400" alt="Aston Villa" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -348,12 +364,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Aston Villa')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Bournemouth')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Bournemouth', ['https://drive.google.com/thumbnail?id=18InfTRcWb47nOyoml5faevVeO3OrxgrR&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=18InfTRcWb47nOyoml5faevVeO3OrxgrR&sz=w400" alt="Bournemouth" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -361,12 +377,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Bournemouth')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Brentford')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Brentford', ['https://drive.google.com/thumbnail?id=1sxoZSa7H0f-o2OIsFDqcwcOqDRZSEP8T&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1sxoZSa7H0f-o2OIsFDqcwcOqDRZSEP8T&sz=w400" alt="Brentford" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -374,12 +390,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Brentford')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Brighton & Hove Albion')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Brighton & Hove Albion', ['https://drive.google.com/thumbnail?id=14SaGYVUQ-XzlJxjSQoQDPJkptEyRKcBJ&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=14SaGYVUQ-XzlJxjSQoQDPJkptEyRKcBJ&sz=w400" alt="Brighton & Hove Albion" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -387,12 +403,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Brighton & Hove Albion')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Chelsea')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Chelsea', ['https://drive.google.com/thumbnail?id=10Pz_3thtL6OnSY-vXPfzF4Mv24jbUE8t&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=10Pz_3thtL6OnSY-vXPfzF4Mv24jbUE8t&sz=w400" alt="Chelsea" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -400,12 +416,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Chelsea')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Coventry City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Coventry City', ['https://drive.google.com/thumbnail?id=1oVpaL7h2xREzKs7fwL61Y9Atzxp9jWf7&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1oVpaL7h2xREzKs7fwL61Y9Atzxp9jWf7&sz=w400" alt="Coventry City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -413,12 +429,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Coventry City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Crystal Palace')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Crystal Palace', ['https://drive.google.com/thumbnail?id=1J2hGEChp3Nbmyh_Kcjds-E7HpoAJGAdz&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1J2hGEChp3Nbmyh_Kcjds-E7HpoAJGAdz&sz=w400" alt="Crystal Palace" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -426,12 +442,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Crystal Palace')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Everton')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Everton', ['https://drive.google.com/thumbnail?id=1JpJLhRRPrsJWlEDgJfrisEZ3ezuuoy1P&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1JpJLhRRPrsJWlEDgJfrisEZ3ezuuoy1P&sz=w400" alt="Everton" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -439,12 +455,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Everton')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Fulham')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Fulham', ['https://drive.google.com/thumbnail?id=1QXx-cV_Ug09fyQacmoWXfJd7T0xtTtyr&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1QXx-cV_Ug09fyQacmoWXfJd7T0xtTtyr&sz=w400" alt="Fulham" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -452,12 +468,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Fulham')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Hull City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Hull City', ['https://drive.google.com/thumbnail?id=1M55cJkeqc8ghJYX9MW8fulMYNP3DZjZF&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1M55cJkeqc8ghJYX9MW8fulMYNP3DZjZF&sz=w400" alt="Hull City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -465,12 +481,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Hull City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Ipswich Town')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Ipswich Town', ['https://drive.google.com/thumbnail?id=1wLiUuoNvjewN6k_0sfREGwHokzFe68eG&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1wLiUuoNvjewN6k_0sfREGwHokzFe68eG&sz=w400" alt="Ipswich Town" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -478,12 +494,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Ipswich Town')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Leeds United')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Leeds United', ['https://drive.google.com/thumbnail?id=1Jzoi1JAnk1GgLW_r85Nv9F8PtpP9laZn&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1Jzoi1JAnk1GgLW_r85Nv9F8PtpP9laZn&sz=w400" alt="Leeds United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -491,12 +507,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Leeds United')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Liverpool')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Liverpool', ['https://drive.google.com/thumbnail?id=1eACbOdVy6SR137dps_PUlCD9mSa9mfEf&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1eACbOdVy6SR137dps_PUlCD9mSa9mfEf&sz=w400" alt="Liverpool" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -504,12 +520,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Liverpool')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Manchester City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Manchester City', ['https://drive.google.com/thumbnail?id=15X0EgQXQElNwUCxL2ZjtQ7iTZbkLPLPV&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=15X0EgQXQElNwUCxL2ZjtQ7iTZbkLPLPV&sz=w400" alt="Manchester City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -517,12 +533,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Manchester City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Manchester United')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Manchester United', ['https://drive.google.com/thumbnail?id=1b0lvYY1ub3bDqf-5Kamk6kioSqpxlIXD&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1b0lvYY1ub3bDqf-5Kamk6kioSqpxlIXD&sz=w400" alt="Manchester United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -530,12 +546,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Manchester United')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Newcastle United')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Newcastle United', ['https://drive.google.com/thumbnail?id=1X--ChHXTLuEIArBjl1nqln301ORF9KcI&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1X--ChHXTLuEIArBjl1nqln301ORF9KcI&sz=w400" alt="Newcastle United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -543,12 +559,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Newcastle United')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Nottingham Forest')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Nottingham Forest', ['https://drive.google.com/thumbnail?id=1SXQMv0DaOpbYx3frLvmMUdgZBgBoJiLx&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1SXQMv0DaOpbYx3frLvmMUdgZBgBoJiLx&sz=w400" alt="Nottingham Forest" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -556,12 +572,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Nottingham Forest')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Sunderland')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Sunderland', ['https://drive.google.com/thumbnail?id=1gfvmbmM6-3QXxVFSccA5wJDYkRW1nhOf&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1gfvmbmM6-3QXxVFSccA5wJDYkRW1nhOf&sz=w400" alt="Sunderland" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -569,12 +585,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Sunderland')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Tottenham Hotspur')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Tottenham Hotspur', ['https://drive.google.com/thumbnail?id=1f3COhoWlKOZB9nrYJFZY3-QugxR1FRap&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1f3COhoWlKOZB9nrYJFZY3-QugxR1FRap&sz=w400" alt="Tottenham Hotspur" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -582,10 +598,10 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Tottenham Hotspur')">Order →</a>
             </div>
           </div>
-        </a>
+        </div>
         </div>
         <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1Le6JOVqd6tgoAH0tul62ZkeOdvd-A_QjdgBddvYi0IU/edit?usp=drive_link" target="_blank" rel="noopener" style="margin-top:20px;">View spreadsheet (internal) →</a>
       </div>
@@ -595,8 +611,8 @@
       <div class="league-panel">
         <h3 class="league-heading"><img class="badge" src="logos/championship-logo.jpg" alt="" onerror="this.style.display='none'">Championship</h3>
         <div class="grid">
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Birmingham City')">
-          <div class="kit-shirt" style="background:#fff;">
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Birmingham City', ['https://drive.google.com/thumbnail?id=1ViZdJ8I-U7FmqDGy2TNo2kxW_cTiYJsP&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1ViZdJ8I-U7FmqDGy2TNo2kxW_cTiYJsP&sz=w400" alt="Birmingham City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -604,12 +620,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Birmingham City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Blackburn Rovers')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Blackburn Rovers', ['https://drive.google.com/thumbnail?id=17jifxa8IpjmXhCyqfHEWELfsTz52Lvdg&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=17jifxa8IpjmXhCyqfHEWELfsTz52Lvdg&sz=w400" alt="Blackburn Rovers" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -617,12 +633,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Blackburn Rovers')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Bolton Wanderers')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Bolton Wanderers', ['https://drive.google.com/thumbnail?id=1d1HUQ9zfEzk6XBXDy1plDRdUpk9OrP-V&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1d1HUQ9zfEzk6XBXDy1plDRdUpk9OrP-V&sz=w400" alt="Bolton Wanderers" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -630,12 +646,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Bolton Wanderers')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Bristol City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Bristol City', ['https://drive.google.com/thumbnail?id=1ZQ0VB9RCcuLkEsf2lLDLYEcYFyJj5WRi&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1ZQ0VB9RCcuLkEsf2lLDLYEcYFyJj5WRi&sz=w400" alt="Bristol City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -643,12 +659,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Bristol City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Burnley')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Burnley', ['https://drive.google.com/thumbnail?id=14H84xZKw6o20Hx0S7Psmt2JSZhYOLV1F&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=14H84xZKw6o20Hx0S7Psmt2JSZhYOLV1F&sz=w400" alt="Burnley" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -656,12 +672,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Burnley')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Cardiff City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Cardiff City', ['https://drive.google.com/thumbnail?id=11070iIGz9gh753X6fq0gz2-hFNUl3akw&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=11070iIGz9gh753X6fq0gz2-hFNUl3akw&sz=w400" alt="Cardiff City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -669,12 +685,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Cardiff City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Charlton Athletic')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Charlton Athletic', ['https://drive.google.com/thumbnail?id=1Oe_d_PpwAVBH4OU4FFLhyiNaPaOqRPBG&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1Oe_d_PpwAVBH4OU4FFLhyiNaPaOqRPBG&sz=w400" alt="Charlton Athletic" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -682,12 +698,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Charlton Athletic')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Derby County')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Derby County', ['https://drive.google.com/thumbnail?id=1aIyaZ8m3ZRWvro-Vwt10NXlLLdL8JQ_A&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1aIyaZ8m3ZRWvro-Vwt10NXlLLdL8JQ_A&sz=w400" alt="Derby County" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -695,12 +711,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Derby County')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Lincoln City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Lincoln City', ['https://drive.google.com/thumbnail?id=1PtUqwL8eRkYI7t0UbI3XZBNp58oOPOJA&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1PtUqwL8eRkYI7t0UbI3XZBNp58oOPOJA&sz=w400" alt="Lincoln City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -708,12 +724,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Lincoln City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Middlesbrough')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Middlesbrough', ['https://drive.google.com/thumbnail?id=1GCvjZRxrn0sjfRO5PefnlW331sJJPwoN&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1GCvjZRxrn0sjfRO5PefnlW331sJJPwoN&sz=w400" alt="Middlesbrough" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -721,12 +737,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Middlesbrough')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Millwall')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Millwall', ['https://drive.google.com/thumbnail?id=1aOfW5KMejmeXFzE24neVn5kZWsOr8rGr&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1aOfW5KMejmeXFzE24neVn5kZWsOr8rGr&sz=w400" alt="Millwall" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -734,12 +750,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Millwall')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Norwich City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Norwich City', ['https://drive.google.com/thumbnail?id=1lkjwSYUvhIFC_HlmsRSCfZ6_Skh2aJeU&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1lkjwSYUvhIFC_HlmsRSCfZ6_Skh2aJeU&sz=w400" alt="Norwich City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -747,12 +763,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Norwich City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Portsmouth')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Portsmouth', ['https://drive.google.com/thumbnail?id=13rU2ArHxOTnLbm2OGuygP50C0TSTppvJ&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=13rU2ArHxOTnLbm2OGuygP50C0TSTppvJ&sz=w400" alt="Portsmouth" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -760,12 +776,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Portsmouth')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Preston North End')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Preston North End', ['https://drive.google.com/thumbnail?id=1-T4oggUYRfesgYpi7MUeN1XzJzrCcqb8&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1-T4oggUYRfesgYpi7MUeN1XzJzrCcqb8&sz=w400" alt="Preston North End" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -773,12 +789,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Preston North End')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Queens Park Rangers')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Queens Park Rangers', ['https://drive.google.com/thumbnail?id=1tsOSsu5FYOYNxLl3d8rsokW-vUp0M7o4&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1tsOSsu5FYOYNxLl3d8rsokW-vUp0M7o4&sz=w400" alt="Queens Park Rangers" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -786,12 +802,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Queens Park Rangers')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Sheffield United')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Sheffield United', ['https://drive.google.com/thumbnail?id=1bphTgkKBWEBKbXTGLZHnqLBBw2cN_ID-&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1bphTgkKBWEBKbXTGLZHnqLBBw2cN_ID-&sz=w400" alt="Sheffield United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -799,12 +815,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Sheffield United')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Southampton')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Southampton', ['https://drive.google.com/thumbnail?id=16eZt7LnazuJ86kYz2M5rzxyU6z01eDxc&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=16eZt7LnazuJ86kYz2M5rzxyU6z01eDxc&sz=w400" alt="Southampton" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -812,12 +828,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Southampton')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Stoke City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Stoke City', ['https://drive.google.com/thumbnail?id=1c09MGjLPjIjXIxoEnU3fj_9o6efh-oZA&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1c09MGjLPjIjXIxoEnU3fj_9o6efh-oZA&sz=w400" alt="Stoke City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -825,12 +841,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Stoke City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Swansea City')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Swansea City', ['https://drive.google.com/thumbnail?id=1tKt4gi7OjsFrwAyf990XnOYHfGX_OTd0&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1tKt4gi7OjsFrwAyf990XnOYHfGX_OTd0&sz=w400" alt="Swansea City" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -838,12 +854,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Swansea City')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Watford')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Watford', ['https://drive.google.com/thumbnail?id=11QmzwWJv17LvqTphTHrjZXwRdMbraRE9&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=11QmzwWJv17LvqTphTHrjZXwRdMbraRE9&sz=w400" alt="Watford" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -851,12 +867,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Watford')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('West Bromwich Albion')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('West Bromwich Albion', ['https://drive.google.com/thumbnail?id=1--8F51UX0P40oqaEhYVYZF4v3IRslPEL&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1--8F51UX0P40oqaEhYVYZF4v3IRslPEL&sz=w400" alt="West Bromwich Albion" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -864,12 +880,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('West Bromwich Albion')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('West Ham United')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('West Ham United', ['https://drive.google.com/thumbnail?id=1lVlds3ruCT2hwjSXkTx1GtI9E113cr_F&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1lVlds3ruCT2hwjSXkTx1GtI9E113cr_F&sz=w400" alt="West Ham United" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -877,12 +893,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('West Ham United')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Wolverhampton Wanderers')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Wolverhampton Wanderers', ['https://drive.google.com/thumbnail?id=1rm55wPCtinGB1fMNRaqi_BeJaFIREKnU&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=1rm55wPCtinGB1fMNRaqi_BeJaFIREKnU&sz=w400" alt="Wolverhampton Wanderers" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -890,12 +906,12 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Wolverhampton Wanderers')">Order →</a>
             </div>
           </div>
-        </a>
-        <a class="kit-card" href="#order-form" onclick="prefillOrder('Wrexham')">
-          <div class="kit-shirt" style="background:#fff;">
+        </div>
+        <div class="kit-card">
+          <div class="kit-shirt" style="background:#fff;cursor:pointer;" onclick="openShirtModal('Wrexham', ['https://drive.google.com/thumbnail?id=12SGnCui5CTa6GHd22X87vb4BzIQ7D5Lz&sz=w800'])">
             <img src="https://drive.google.com/thumbnail?id=12SGnCui5CTa6GHd22X87vb4BzIQ7D5Lz&sz=w400" alt="Wrexham" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="kit-body">
@@ -903,10 +919,10 @@
             <div class="meta">Sizes: Kids 3-13, Adult S-XXL</div>
             <div class="row">
               <span class="price">£29.50</span>
-              <span class="order-link">Order →</span>
+              <a href="#order-form" class="order-link" onclick="prefillOrder('Wrexham')">Order →</a>
             </div>
           </div>
-        </a>
+        </div>
         </div>
         <a class="drive-link" href="https://docs.google.com/spreadsheets/d/1v9dpKiFH26fpc_HX5_d4Z-Y1RmJyemvirrfEfk_DVPg/edit?usp=drive_link" target="_blank" rel="noopener" style="margin-top:20px;">View spreadsheet (internal) →</a>
       </div>
@@ -1197,6 +1213,16 @@
   <div class="wrap">&copy; <span id="year"></span> Little Kickers Football Kits. Replica kits sold as fan merchandise.</div>
 </footer>
 
+<div class="shirt-modal" id="shirtModal">
+  <div class="shirt-modal-backdrop" onclick="closeShirtModal()"></div>
+  <div class="shirt-modal-box">
+    <button class="shirt-modal-close" onclick="closeShirtModal()" aria-label="Close">✕</button>
+    <h3 id="shirtModalTitle"></h3>
+    <div class="shirt-modal-images" id="shirtModalImages"></div>
+    <a href="#order-form" class="btn btn-primary" id="shirtModalOrder" onclick="closeShirtModal()" style="margin-top:18px;">Order this kit →</a>
+  </div>
+</div>
+
 <div class="install-banner" id="installBanner">
   <span>Add this to your home screen for quick access.</span>
   <div style="display:flex;gap:8px;align-items:center;">
@@ -1260,6 +1286,24 @@ Notes: ${f.notes.value || '—'}`;
   function prefillOrder(team) {
     const kitInput = document.getElementById('of-kit');
     if (kitInput) kitInput.value = team;
+  }
+
+  function openShirtModal(team, images) {
+    document.getElementById('shirtModalTitle').textContent = team;
+    const wrap = document.getElementById('shirtModalImages');
+    wrap.innerHTML = '';
+    images.forEach((src) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = team;
+      wrap.appendChild(img);
+    });
+    document.getElementById('shirtModalOrder').onclick = () => { prefillOrder(team); closeShirtModal(); };
+    document.getElementById('shirtModal').classList.add('show');
+  }
+
+  function closeShirtModal() {
+    document.getElementById('shirtModal').classList.remove('show');
   }
 
   // Live stock sync — pulls current Stock column from each league's Google Sheet
