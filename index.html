@@ -1166,7 +1166,17 @@
       </div>
       <div class="full">
         <label for="of-kit">Kit / team wanted</label>
-        <input type="text" id="of-kit" name="kit" placeholder="e.g. Manchester United Away 26/27" required>
+        <input type="text" id="of-kit" name="kit" placeholder="e.g. Manchester United" required>
+      </div>
+      <div>
+        <label for="of-kit-type">Which kit?</label>
+        <select id="of-kit-type" name="kitType" required>
+          <option value="">Select one</option>
+          <option value="Home">Home</option>
+          <option value="Away">Away</option>
+          <option value="Third">Third</option>
+          <option value="Group Kit (any)">Group Kit (any)</option>
+        </select>
       </div>
       <div>
         <label for="of-size">Size</label>
@@ -1219,6 +1229,16 @@
     <button class="shirt-modal-close" onclick="closeShirtModal()" aria-label="Close">✕</button>
     <h3 id="shirtModalTitle"></h3>
     <div class="shirt-modal-images" id="shirtModalImages"></div>
+    <div style="margin-top:18px;">
+      <label for="shirtModalKitType" style="display:block;font-size:.85rem;font-weight:700;margin-bottom:6px;">Which kit do you want?</label>
+      <select id="shirtModalKitType" style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;font-family:'Inter';font-size:.95rem;">
+        <option value="">Select one</option>
+        <option value="Home">Home</option>
+        <option value="Away">Away</option>
+        <option value="Third">Third</option>
+        <option value="Group Kit (any)">Group Kit (any)</option>
+      </select>
+    </div>
     <a href="#order-form" class="btn btn-primary" id="shirtModalOrder" onclick="closeShirtModal()" style="margin-top:18px;">Order this kit →</a>
   </div>
 </div>
@@ -1241,11 +1261,12 @@
   document.getElementById('orderForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const f = e.target;
-    const subject = `Kit order — ${f.kit.value}`;
+    const subject = `Kit order — ${f.kit.value} (${f.kitType.value})`;
     const body =
 `Name: ${f.name.value}
 Email: ${f.email.value}
 Kit/team: ${f.kit.value}
+Which kit: ${f.kitType.value}
 Size: ${f.size.value}
 Quantity: ${f.qty.value}
 Name & number: ${f.personalisation.value || '—'}
@@ -1283,9 +1304,11 @@ Notes: ${f.notes.value || '—'}`;
     sessionStorage.setItem('installDismissed', '1');
   });
 
-  function prefillOrder(team) {
+  function prefillOrder(team, kitType) {
     const kitInput = document.getElementById('of-kit');
     if (kitInput) kitInput.value = team;
+    const kitTypeSelect = document.getElementById('of-kit-type');
+    if (kitTypeSelect && kitType) kitTypeSelect.value = kitType;
   }
 
   function openShirtModal(team, images) {
@@ -1298,7 +1321,12 @@ Notes: ${f.notes.value || '—'}`;
       img.alt = team;
       wrap.appendChild(img);
     });
-    document.getElementById('shirtModalOrder').onclick = () => { prefillOrder(team); closeShirtModal(); };
+    document.getElementById('shirtModalKitType').value = '';
+    document.getElementById('shirtModalOrder').onclick = () => {
+      const kitType = document.getElementById('shirtModalKitType').value;
+      prefillOrder(team, kitType);
+      closeShirtModal();
+    };
     document.getElementById('shirtModal').classList.add('show');
   }
 
